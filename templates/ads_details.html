@@ -1,12 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop-o-Shop</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+
+    <!--Hero Image-->
+    <div class="row valign" title="Hero Image">
+        <div class="col s12 hero-image hero-home">
+            <div class="row">
+                <div class="col s12 m8 offset-m2">
+                    <div class=" welcome">
+                        <h4 class="center-align black-text text-shadow ">
+                            Welcome to Online Shopping
+                        </h4>
+                        <p class="center-align text-shadow">
+                            There's nothing better than online shopping made Easy! <br>
+                            <em>Keep calm and Shop Online</em>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     
-</body>
-</html>
+    <!--ad card-->
+    {% if ads|length > 0 %}
+        <div class="container">
+            <div class="row center valign">
+                {% for ad in ads %}
+                    <div class="col s12 m6 l4">
+                        <a href="{{ url_for('view_ad', ad_id=ad._id) }}">
+                            <div class="card z-depth-3 waves-effect waves-block waves-light teal lighten-5">
+                                <!--ad image-->
+                                <div class="card-image card-image-main">
+                                    <img class="responsive-img" src="{{ ad.photo_url }}" alt="Item Photo">
+                                </div>
+                                <div class="card-content-main">
+                                    <!--ad title-->
+                                    <span class="card-title activator orange-text text-darken-4"> {{ ad.ad_title }}</span>
+                                    <div class="divider"></div>
+                                    <!--ad category name-->
+                                    <div class="section">
+                                        <p><i class="fas fa-folder-open prefix"></i> {{ ad.category_name }}</p>
+                                    </div>
+                                    <div class="divider"></div>
+                                    <!--ad price-->
+                                    <div class="section">
+                                        <p><i class="fas fa-tag prefix"></i> Price: {{ ad.price }} euro</p>
+                                    </div>
+                                    <div class="divider"></div>
+                                    <!--ad availability-->
+                                    <div class="section center-align">
+                                        {% if ad.is_available == "on" %}
+                                            <i class="fas fa-shopping-cart tooltipped"
+                                                data-position="right" data-tooltip="Available">
+                                                <span class="new badge green" data-badge-caption="">Available</span></i>
+                                        {% else %}
+                                            <i class="fas fa-shopping-cart tooltipped"
+                                                data-position="right" data-tooltip="SOLD!">
+                                                <span class="new badge red" data-badge-caption="">SOLD</span></i>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% else %}
+        <h5 class="center-align red-text text-darken-4">
+            No Results Found!
+        </h5>
+    {% endif %}
+
+{% endblock %}

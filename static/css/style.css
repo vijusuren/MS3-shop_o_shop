@@ -1,0 +1,12 @@
+.text-shadow {
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+}
+
+body{
+    background-color: #eceff1;
+}
+
+/*------------------------------------------------navbar*/
+nav ul li a {
+    font-size: 1.2rem;
+}
