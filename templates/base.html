@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Online web shop">
+    
+    <!--favicon-->
+    <link rel="icon" href="https://www.google.com/url?sa=i&url=http%3A%2F%2Fusshoppingmart.com%2F&psig=AOvVaw3rE9RiHoHotqNcFSWLPjiK&ust=1621663621684000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNDmjPaN2vACFQAAAAAdAAAAABAD" type="image/icon type">
+    
 
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -34,7 +38,7 @@
 					<li><a href="#">Categories</a></li>
 					<li><a href="#">Log Out</a></li>
 					<li><a href="#">Log In</a></li>
-					<li><a href="#">Sign In</a></li>
+					<li><a href="{{ url_for('register') }}">Sign In</a></li>
                     <li><a href="#">Contact Us</a></li>
 				</ul>
 			</div>
@@ -48,7 +52,7 @@
             <li><a href="#">Categories</a></li>
             <li><a href="#">Log Out</a></li>
             <li><a href="#">Log In</a></li>
-            <li><a href="#">Sign In</a></li>
+            <li><a href="{{ url_for('register') }}">Sign In</a></li>
             <li><a href="#">Contact Us</a></li>
 		</ul>
 	</header>
