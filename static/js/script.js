@@ -6,15 +6,14 @@ $(document).ready(function () {
     $(".sidenav").sidenav({edge: "right"});
 });
 
+$(document).ready(function(){
+    $('.carousel').carousel({
+        fullWidth:true,
+        indicators:true
+    });
 
+    setInterval(function(){
+        $('.carousel').carousel('next');
+    }, 2000);
+});
 
-
-
-/*
-    vanilla JavaScript for MaterializeCSS initialization
-*/
-
-// document.addEventListener('DOMContentLoaded', function () {
-//     let sidenavs = document.querySelectorAll(".sidenav");
-//     let sidenavsInstance = M.Sidenav.init(sidenavs, {edge: "right"});
-// });

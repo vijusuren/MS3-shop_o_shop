@@ -4,10 +4,30 @@
 
 body{
     background-color:whitesmoke;
-    
 }
 
 /*------------------------------------------------navbar*/
 nav ul li a {
     font-size: 1.2rem;
+}
+
+/*------------------------------------------------footer*/
+.page-footer {
+    padding-top: 0px !important;
+}
+
+.page-footer .row {
+    margin-bottom: 0px !important;
+}
+.page-footer li {
+    display: inline;
+    margin: 0.938rem;
+}
+
+.page-footer li a i {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.56rem;
+    color: #fff;
+    text-align: center;
 }
