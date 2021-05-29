@@ -6,13 +6,6 @@ $(document).ready(function () {
     $(".sidenav").sidenav({edge: "right"});
 });
 
-$(document).ready(function(){
-    $('.carousel').carousel({
-        indicators:true
-    });
-
-    setInterval(function(){
-        $('.carousel').carousel('next');
-    }, 2000);
+$(document).ready(function () {
+    $('.slider').slider({full_width: true});
 });
-

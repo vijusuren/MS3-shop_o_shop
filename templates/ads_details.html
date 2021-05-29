@@ -1,65 +1,57 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <!--Hero Image-->
-    <div class="carousel carousel-slider">
-
-        <a class ="carousel-item" href="#1!"><img src="https://www.europarl.europa.eu/resources/library/images/20160609PHT31661/20160609PHT31661_original.jpg" alt="image1" width="100%" height="100%"></a>
-        <a class ="carousel-item" href="#2!"><img src="https://5.imimg.com/data5/MJ/JB/MY-20026673/e-commerce-application-development-service-500x500.jpg" alt="image2" width="100%" height="100%"></a>
-        <a class ="carousel-item" href="#3!"><img src="https://image.freepik.com/free-vector/online-shopping-with-laptop-smartphone-technology_24877-56046.jpg" alt="image3" width="100%" height="100%"></a>
-        <a class ="carousel-item" href="#4!"><img src="https://cdn.strategyonline.ca/wp/wp-content/uploads/2020/05/onlineshoppingillustrated.png?w=640" alt="image4" width="100%" height="100%"></a>
-        <a class ="carousel-item" href="#5!"><img src="https://image.freepik.com/free-vector/online-shopping-with-woman-character_1133-387.jpg" alt="image5" width="100%" height="100%"></a>
-
+    <!--Carousel Image-->
+    <div class="slider">
+        <ul class="slides">
+            <li>
+                <img class="img-responsive" src="https://img.freepik.com/free-photo/woman-holding-various-shopping-bags-copy-space_23-2148674122.jpg?size=626&ext=jpg&ga=GA1.2.1612729058.1614211200">
+                <div class="caption black-text right-align">
+                    <h3>Shop Mart</h3>
+                    <h5 class="light grey-text text-lighten-3">Find It. Love It. Buy It.</h5>
+                </div>
+            </li>
+            <li>
+                <img class="img-responsive" src="https://5.imimg.com/data5/GA/VA/QD/GLADMIN-9714106/5455-500x500.png">
+                <div class="caption right-align">
+                    <h3>Online Shopping</h3>
+                    <h5 class="light grey-text text-lighten-3">Buy It. Sell It. Love It.</h5>
+                </div>
+            </li>
+            <li>
+                <img class="img-responsive" src="https://t4.ftcdn.net/jpg/02/99/40/51/240_F_299405123_vYPySvJQkWaFvURMTaqcVa0678GRB3Vx.jpg">
+                <div class="caption black-text top-align">
+                    <h3>Shop Mart</h3>
+                    <h5 class="light black-text text-lighten-3">Need it. Want it. Done.</h5>
+                </div>
+            </li>
+            <li>
+                <img class="img-responsive" src="https://images.wallpaperscraft.com/image/buddha_meditation_buddhism_124082_2048x1152.jpg">
+                <div class="caption black-text right-align">
+                    <h3>Online Shoppig</h3>
+                    <h5 class="light grey-text text-lighten-3">Shop what you wanted.</h5>
+                </div>
+            </li>
+        </ul>
     </div>
-    <!--ad card-->
-    {% if ads|length > 0 %}
-        <div class="container">
-            <div class="row center valign">
-                {% for ad in ads %}
-                    <div class="col s12 m6 l4">
-                        <a href="{{ url_for('view_ad', ad_id=ad._id) }}">
-                            <div class="card z-depth-3 waves-effect waves-block waves-light teal lighten-5">
-                                <!--ad image-->
-                                <div class="card-image card-image-main">
-                                    <img class="responsive-img" src="{{ ad.photo_url }}" alt="Item Photo">
-                                </div>
-                                <div class="card-content-main">
-                                    <!--ad title-->
-                                    <span class="card-title activator orange-text text-darken-4"> {{ ad.ad_title }}</span>
-                                    <div class="divider"></div>
-                                    <!--ad category name-->
-                                    <div class="section">
-                                        <p><i class="fas fa-folder-open prefix"></i> {{ ad.category_name }}</p>
-                                    </div>
-                                    <div class="divider"></div>
-                                    <!--ad price-->
-                                    <div class="section">
-                                        <p><i class="fas fa-tag prefix"></i> Price: {{ ad.price }} euro</p>
-                                    </div>
-                                    <div class="divider"></div>
-                                    <!--ad availability-->
-                                    <div class="section center-align">
-                                        {% if ad.is_available == "on" %}
-                                            <i class="fas fa-shopping-cart tooltipped"
-                                                data-position="right" data-tooltip="Available">
-                                                <span class="new badge green" data-badge-caption="">Available</span></i>
-                                        {% else %}
-                                            <i class="fas fa-shopping-cart tooltipped"
-                                                data-position="right" data-tooltip="SOLD!">
-                                                <span class="new badge red" data-badge-caption="">SOLD</span></i>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                {% endfor %}
+    <!--search bar-->
+    <div class="container">
+        <form action="#" method="post" class="col s12">
+            <div class="row center-align">
+                <div class="input-field col s12 ">
+                    <i class="fas fa-search prefix teal-text text-darken-4 left"></i>
+                    <input type="text" name="query" id="query" minlength="3" class="validate" required>
+                    <label for="query"> Search Ads</label>
+                </div>
+                <div class="col s12">
+                    <a href="#" class="orange darken-4 btn text-shadow"><i
+                            class="fas fa-undo"></i></a>
+                    <button type="submit" class="teal darken-1 btn text-shadow" aria-label="search-button">
+                            <i class="fas fa-search"></i>
+                    </button>
+                </div>
             </div>
-        </div>
-    {% else %}
-        <h5 class="center-align red-text text-darken-4">
-            No Results Found!
-        </h5>
-    {% endif %}
+        </form>
+    </div>
 
 {% endblock %}

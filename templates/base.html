@@ -9,7 +9,6 @@
     <!--favicon-->
     <link rel="icon" href="https://www.google.com/url?sa=i&url=http%3A%2F%2Fusshoppingmart.com%2F&psig=AOvVaw3rE9RiHoHotqNcFSWLPjiK&ust=1621663621684000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNDmjPaN2vACFQAAAAAdAAAAABAD" type="image/icon type">
     
-
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" type="text/css">
@@ -20,9 +19,12 @@
     <!--Internal CSS link-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     
+    <!--Link to Email.js user account-->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+
     {% block styles %}
     {% endblock %}
-    <title>Shop o Shop</title>
+    <title>Shop Mart</title>
 </head>
 <body>
 
@@ -39,7 +41,7 @@
 					<li><a href="#">Log Out</a></li>
 					<li><a href="{{ url_for('login') }}">Log In</a></li>
 					<li><a href="{{ url_for('register') }}">Register</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -53,7 +55,7 @@
             <li><a href="#">Log Out</a></li>
             <li><a href="{{ url_for('login') }}">Log In</a></li>
             <li><a href="{{ url_for('register') }}">Register</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
 		</ul>
 	</header>
 
