@@ -45,6 +45,7 @@ def register():
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
+        return redirect(url_for("profile", username=session["user"]))
     return render_template("register.html")
 
 
@@ -99,6 +100,13 @@ def contact():
         flash("Your message has been sent")
         return redirect(url_for("get_ads"))
     return render_template("contact.html")
+
+
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    ads_details = list(mongo.db.ads.find({"$text": {"$search": query}}))
+    return render_template("ads_details.html", ads_details=ads_details)
 
 
 if __name__ == "__main__":

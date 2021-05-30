@@ -9,17 +9,17 @@
                 <div class="caption black-text right-align">
                     <h3>Shop Mart</h3>
                     <h5 class="light grey-text text-lighten-3">Find It. Love It. Buy It.</h5>
-                </div>
+                 </div>
             </li>
             <li>
-                <img class="img-responsive" src="https://5.imimg.com/data5/GA/VA/QD/GLADMIN-9714106/5455-500x500.png">
+                <img class="img-responsive" src="https://img.freepik.com/free-photo/beautiful-golden-jewelry-with-jem-red-velvet-background_99074-47.jpg?size=626&ext=jpg">
                 <div class="caption right-align">
                     <h3>Online Shopping</h3>
                     <h5 class="light grey-text text-lighten-3">Buy It. Sell It. Love It.</h5>
                 </div>
             </li>
             <li>
-                <img class="img-responsive" src="https://t4.ftcdn.net/jpg/02/99/40/51/240_F_299405123_vYPySvJQkWaFvURMTaqcVa0678GRB3Vx.jpg">
+                <img class="img-responsive" src="https://st4.depositphotos.com/4278641/38546/i/600/depositphotos_385464748-stock-photo-different-female-shoes-colorful-background.jpg">
                 <div class="caption black-text top-align">
                     <h3>Shop Mart</h3>
                     <h5 class="light black-text text-lighten-3">Need it. Want it. Done.</h5>
@@ -28,30 +28,30 @@
             <li>
                 <img class="img-responsive" src="https://images.wallpaperscraft.com/image/buddha_meditation_buddhism_124082_2048x1152.jpg">
                 <div class="caption black-text right-align">
-                    <h3>Online Shoppig</h3>
+                    <h3>Online Shopping</h3>
                     <h5 class="light grey-text text-lighten-3">Shop what you wanted.</h5>
                 </div>
             </li>
         </ul>
     </div>
-    <!--search bar-->
-    <div class="container">
-        <form action="#" method="post" class="col s12">
-            <div class="row center-align">
-                <div class="input-field col s12 ">
-                    <i class="fas fa-search prefix teal-text text-darken-4 left"></i>
-                    <input type="text" name="query" id="query" minlength="3" class="validate" required>
-                    <label for="query"> Search Ads</label>
-                </div>
-                <div class="col s12">
-                    <a href="#" class="orange darken-4 btn text-shadow"><i
-                            class="fas fa-undo"></i></a>
-                    <button type="submit" class="teal darken-1 btn text-shadow" aria-label="search-button">
-                            <i class="fas fa-search"></i>
-                    </button>
-                </div>
+
+<!-- Search Bar-->
+<div class="container">
+    <form action="{{ url_for('search') }}" method="post" class="col s12">
+        <div class="row center-align">
+            <div class="input-field col s12 ">
+                <i class="fas fa-search prefix blue-grey-text text-darken-4 left"></i>
+                <input type="text" name="query" id="query" minlength="3" class="validate" required>
+                <label for="query"> Search</label>
             </div>
-        </form>
-    </div>
+            <div class="col s12">
+                <a href="{{ url_for('get_ads') }}" class="orange darken-4 btn text-shadow">Reset</a>
+                <button type="submit" class="blue-gery darken-1 btn text-shadow" aria-label="search-button">
+                    Submit
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
 
 {% endblock %}
